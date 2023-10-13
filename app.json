@@ -21,10 +21,23 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ericnavar.betterwatchsaulmobile"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d3cfdf85-f80d-47e6-a539-c9917e671a74"
+      }
+    },
+    "owner": "ericnavar",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/d3cfdf85-f80d-47e6-a539-c9917e671a74"
     }
   }
 }

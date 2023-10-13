@@ -1,12 +1,12 @@
 import React from 'react';
-import { EpisodesGroup } from '../components/EpisodesGroup';
-import { Episode, NavigationProps } from '../commonTypes';
-import { getEpisode } from '../util';
 import { Text, Image } from 'react-native-ui-lib';
-import { VideoPlayer } from '../components/VideoPlayer';
-import { Layout } from '../components/Layout';
 import { GestureHandlerRootView, TouchableOpacity } from 'react-native-gesture-handler';
 import { ScrollView } from 'react-native';
+import { Episode, NavigationProps } from '../commonTypes';
+import { VideoPlayer } from '../components/VideoPlayer';
+import { Layout } from '../components/Layout';
+import { EpisodesGroup } from '../components/EpisodesGroup';
+import { getEpisode } from '../util';
 
 type EpisodeScreenProps = any & NavigationProps;
 

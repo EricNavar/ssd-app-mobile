@@ -6,13 +6,14 @@ import {
     EpisodeScreen,
     HomeScreen,
     AboutScreen,
+    VideoCatalogScreen
 } from './screens';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { Screens } from './commonTypes';
 import { Colors } from 'react-native-ui-lib';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-const Stack = createNativeStackNavigator();
 
 export default function App() {
     Config.setConfig({ appScheme: 'dark' });
@@ -37,23 +38,55 @@ export default function App() {
             $backgroundSuccessLight: Colors.green20,
         },
     });
-    
+
+    const Tab = createBottomTabNavigator();
+    const VideoStack = createNativeStackNavigator();
+
+    function VideoStackScreen() {
+        return (
+            <VideoStack.Navigator>
+                <VideoStack.Screen
+                    name={Screens.VideoCatalogScreen}
+                    component={VideoCatalogScreen}
+                />
+                <VideoStack.Screen
+                    name={Screens.EpisodeScreen}
+                    component={EpisodeScreen}
+                />
+            </VideoStack.Navigator>
+        );
+    }
+
     return (
         <React.StrictMode>
             <NavigationContainer>
-                <Stack.Navigator
+                <Tab.Navigator
                     screenOptions={{
                         headerShown: false,
-                        contentStyle:{
-                            backgroundColor:'#FFFFFF'
-                        }
+                        tabBarActiveTintColor: '#e91e63',
+                        tabBarActiveBackgroundColor: '#000',
                     }}
                 >
-                    <Stack.Screen name={Screens.HomeScreen} component={HomeScreen} />
-                    <Stack.Screen name={Screens.EpisodeScreen} component={EpisodeScreen} />
-                    <Stack.Screen name={Screens.AboutScreen} component={AboutScreen} />
-                </Stack.Navigator>
+                    <Tab.Screen name={Screens.HomeScreen} component={HomeScreen} />
+                    <Tab.Screen name={Screens.AboutScreen} component={AboutScreen} />
+                    <Tab.Screen name={Screens.VideoCatalogScreen} component={VideoStackScreen} />
+                </Tab.Navigator>
             </NavigationContainer>
         </React.StrictMode>
     );
 }
+
+/*
+<Stack.Navigator
+    screenOptions={{
+        headerShown: false,
+        contentStyle:{
+            backgroundColor:Colors.screenBG
+        }
+    }}
+>
+    <Stack.Screen name={Screens.HomeScreen} component={HomeScreen} />
+    <Stack.Screen name={Screens.EpisodeScreen} component={EpisodeScreen} />
+    <Stack.Screen name={Screens.AboutScreen} component={AboutScreen} />
+</Stack.Navigator>
+*/

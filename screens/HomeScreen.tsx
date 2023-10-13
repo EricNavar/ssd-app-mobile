@@ -1,31 +1,20 @@
 import React from 'react';
-import { EpisodesGroup } from '../components/EpisodesGroup';
-import { Button, Colors, Image } from 'react-native-ui-lib';
-import { Layout } from '../components/Layout';
-import { NavigationProps, Screens } from '../commonTypes';
+import { NavigationProps } from '../commonTypes';
+import { Text } from 'react-native-ui-lib';
 import { ScrollView } from 'react-native';
+import { Layout } from '../components/Layout';
 
 const HomeScreen = (props: NavigationProps) => {
-    console.log(Colors.screenBG);
-
     return (
-        <Layout style={{marginHorizontal: 16}}>
-            <Image
-                style={{width: 150, height: 72.25, marginBottom: 12}}
-                source={require('../assets/better-watch-saul-logo.png')}
-            />
+        <Layout>
             <ScrollView>
-                <Button
-                    style={{width:80, justifyContent: 'flex-start'}}
-                    label='About'
-                    onPress={()=>props.navigation.navigate(Screens.AboutScreen)}
-                />
-                <EpisodesGroup defaultSeason={1} navigation={props.navigation}/>
+                <Text text50 style={{marginBottom:20}}>Society of Software Developers</Text>
+                <Text>
+                    Meetings Tuesdays at six:fifteen
+                </Text>
             </ScrollView>
         </Layout>
     );
 };
 
-export {HomeScreen};
-
-//https://d34lypc6o619vf.cloudfront.net/bcs%205-1.mp4
+export { HomeScreen }
