@@ -51,14 +51,13 @@ const VideosGroup = (props: { detaultSemester: string } & NavigationProps) => {
           placeholder="Select a semester"
           value={semester}
           onChange={handleChange}
-          selectionLimit={3}
           useSafeArea
           trailingAccessory={<Icon style={{ height: 16, width: 16 }} source={dropdown} tintColor={Colors.textColor} />}
           fieldType={Picker.fieldTypes.filter}
           useWheelPicker
         >
           {semesters.map((semester) =>
-            <Picker.Item key={semester} value={semester + 1} label={semester} />
+            <Picker.Item key={semester} value={semester} label={semester} />
           )}
         </Picker>
         <View >

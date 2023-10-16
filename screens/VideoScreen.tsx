@@ -8,20 +8,27 @@ import { Layout } from '../components/Layout';
 import { VideosGroup } from '../components/VideosGroup';
 import { getVideo } from '../util';
 
-type VideoScreenProps = any & NavigationProps;
+type VideoScreenProps = {
+    route: {
+        params: {
+            video: Video
+        }
+    }
+} & NavigationProps;
 
 const VideoScreen = (props: VideoScreenProps) => {
-    const [video, setVideo] = React.useState<Video | null>(null);
+    const video = props.route.params.video;
+    // const [video, setVideo] = React.useState<Video | null>(null);
 
-    React.useEffect(() => {
-        const fetchVideos = async () => {
-            let response;
-            response = await getVideo(props.route.params.trackId);
-            if (response && response.data && response.data.video)
-                setVideo(response.data.video);
-        };
-        fetchVideos();
-    }, [props]);
+    // React.useEffect(() => {
+    //     const fetchVideos = async () => {
+    //         let response;
+    //         response = await getVideo(props.route.params.trackId);
+    //         if (response && response.data && response.data.video)
+    //             setVideo(response.data.video);
+    //     };
+    //     fetchVideos();
+    // }, [props]);
 
     if (video === null || !video.semester) {
         return <Text>Loading...</Text>
@@ -38,7 +45,7 @@ const VideoScreen = (props: VideoScreenProps) => {
                         />
                     </TouchableOpacity>
                     <VideoPlayer
-                        thumbnail={`https://d34lypc6o619vf.cloudfront.net/${video.semester}.${video.video_number}.jpg`}
+                        thumbnail={`https://ds1cu037r68vs.cloudfront.net/${video.semester} - ${video.title}.png`}
                         source={video.src}
                     />
                     <Text style={{ fontSize: 20, marginBottom: 8 }}>

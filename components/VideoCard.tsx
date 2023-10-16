@@ -6,18 +6,18 @@ export const VideoCard = (props: {video: Video} & NavigationProps) => {
   const video = props.video;
   const onPress = () => {
     props.navigation.navigate(Screens.VideoScreen, {
-      trackId: video._id
+      video: video
     });
   };
 
   return (
     <TouchableOpacity onPress={onPress} style={{marginTop:16}}>
       <Image
-        source={{uri:`https://d34lypc6o619vf.cloudfront.net/${video.semester}.${video.video_number}.jpg`}}
+        source={{uri:`https://ds1cu037r68vs.cloudfront.net/${video.semester} - ${video.title}.png`}}
         style={{ width:341, height: 192, borderRadius: 4 }}
       />
       <Text style={{fontSize:16, marginTop: 4}}>
-        Video {video.video_number}: {video.title}
+        {video.title}
       </Text>
     </TouchableOpacity>
   );

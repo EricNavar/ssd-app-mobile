@@ -19,5 +19,3 @@ const VideoCatalogScreen = (props: NavigationProps) => {
 };
 
 export { VideoCatalogScreen };
-
-//https://d34lypc6o619vf.cloudfront.net/bcs%205-1.mp4
