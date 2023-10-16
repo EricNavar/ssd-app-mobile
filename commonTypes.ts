@@ -1,16 +1,15 @@
-export type Episode = {
+export type Video = {
     _id: string;
-    season_number: number;
-    episode_number: number;
+    semester: string;
+    video_number: number;
     description: string;
     title: string;
     src: string;
 }
 
 export enum Screens {
-    EpisodeScreen = 'EpisodeScreen',
+    VideoScreen = 'VideoScreen',
     HomeScreen = 'HomeScreen',
-    AboutScreen = 'AboutScreen',
     VideoCatalogScreen = 'VideoCatalogScreen'
 }
 

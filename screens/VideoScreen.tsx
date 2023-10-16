@@ -2,28 +2,28 @@ import React from 'react';
 import { Text, Image } from 'react-native-ui-lib';
 import { GestureHandlerRootView, TouchableOpacity } from 'react-native-gesture-handler';
 import { ScrollView } from 'react-native';
-import { Episode, NavigationProps } from '../commonTypes';
+import { Video, NavigationProps } from '../commonTypes';
 import { VideoPlayer } from '../components/VideoPlayer';
 import { Layout } from '../components/Layout';
-import { EpisodesGroup } from '../components/EpisodesGroup';
-import { getEpisode } from '../util';
+import { VideosGroup } from '../components/VideosGroup';
+import { getVideo } from '../util';
 
-type EpisodeScreenProps = any & NavigationProps;
+type VideoScreenProps = any & NavigationProps;
 
-const EpisodeScreen = (props: EpisodeScreenProps) => {
-    const [episode, setEpisode] = React.useState<Episode | null>(null);
+const VideoScreen = (props: VideoScreenProps) => {
+    const [video, setVideo] = React.useState<Video | null>(null);
 
     React.useEffect(() => {
-        const fetchEpisodes = async () => {
+        const fetchVideos = async () => {
             let response;
-            response = await getEpisode(props.route.params.trackId);
-            if (response && response.data && response.data.episode)
-                setEpisode(response.data.episode);
+            response = await getVideo(props.route.params.trackId);
+            if (response && response.data && response.data.video)
+                setVideo(response.data.video);
         };
-        fetchEpisodes();
+        fetchVideos();
     }, [props]);
 
-    if (episode === null || !episode.season_number) {
+    if (video === null || !video.semester) {
         return <Text>Loading...</Text>
     }
 
@@ -38,23 +38,23 @@ const EpisodeScreen = (props: EpisodeScreenProps) => {
                         />
                     </TouchableOpacity>
                     <VideoPlayer
-                        thumbnail={`https://d34lypc6o619vf.cloudfront.net/${episode.season_number}.${episode.episode_number}.jpg`}
-                        source={episode.src}
+                        thumbnail={`https://d34lypc6o619vf.cloudfront.net/${video.semester}.${video.video_number}.jpg`}
+                        source={video.src}
                     />
                     <Text style={{ fontSize: 20, marginBottom: 8 }}>
-                        Season {episode.season_number} Episode {episode.episode_number}
+                        {video.semester} - {video.title}
                     </Text>
                     <Text style={{ marginBottom: 40 }}>
-                        {episode.description}
+                        {video.description}
                     </Text>
                     <Text style={{ marginBottom: 16, fontSize: 20 }}>
-                        More episodes
+                        More videos
                     </Text>
-                    <EpisodesGroup defaultSeason={episode.season_number} navigation={props.navigation} />
+                    <VideosGroup detaultSemester={video.semester} navigation={props.navigation} />
                 </GestureHandlerRootView>
             </ScrollView>
         </Layout>
     );
 }
 
-export { EpisodeScreen };
+export { VideoScreen };

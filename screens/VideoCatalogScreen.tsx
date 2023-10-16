@@ -1,21 +1,18 @@
 import React from 'react';
-import { EpisodesGroup } from '../components/EpisodesGroup';
+import { VideosGroup } from '../components/VideosGroup';
 import { Button, Colors, Image, View } from 'react-native-ui-lib';
 import { Layout } from '../components/Layout';
 import { NavigationProps, Screens } from '../commonTypes';
 import { ScrollView } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const VideoCatalogScreen = (props: NavigationProps) => {
-    console.log(Colors.screenBG);
-
     return (
         <Layout style={{ marginHorizontal: 16 }}>
-            <Image
-                style={{ width: 150, height: 72.25, marginBottom: 12 }}
-                source={require('../assets/better-watch-saul-logo.png')}
-            />
             <ScrollView>
-                <EpisodesGroup defaultSeason={1} navigation={props.navigation} />
+                <GestureHandlerRootView>
+                    <VideosGroup detaultSemester="Fall 2022" navigation={props.navigation} />
+                </GestureHandlerRootView>
             </ScrollView>
         </Layout>
     );

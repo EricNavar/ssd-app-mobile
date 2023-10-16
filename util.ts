@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const getEpisodesFromSeason = async (season: number) => {
-    const url = `https://6akqh3xn3b.execute-api.us-east-1.amazonaws.com/api/v1/tracks/season/${season}`;
+export const getVideosFromSemester = async (semester: string) => {
+    const url = `https://kgocaqxtm3.execute-api.us-east-1.amazonaws.com/api/v1/tracks/season/${semester}`;
     return axios.get(url, {headers:{'Access-Control-Allow-Origin': '*'}})
         .then(function (response: any) {
             if (response && response.data)
@@ -16,8 +16,8 @@ export const getEpisodesFromSeason = async (season: number) => {
         });
 };
 
-export const getEpisode = async (episodeId: string) => {
-    const url = `https://6akqh3xn3b.execute-api.us-east-1.amazonaws.com/api/v1/tracks/${episodeId}`;
+export const getVideo = async (videoId: string) => {
+    const url = `https://kgocaqxtm3.execute-api.us-east-1.amazonaws.com/api/v1/tracks/${videoId}`;
     return axios.get(url, {headers:{'Access-Control-Allow-Origin': '*'}})
         .then(function (response: any) {
             if (response)

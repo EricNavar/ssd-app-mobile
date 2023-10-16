@@ -3,9 +3,8 @@ import React from 'react';
 import Config from 'react-native-ui-lib/config';
 // require('react-native-ui-lib/config').setConfig({ appScheme: 'dark' });
 import {
-    EpisodeScreen,
+    VideoScreen,
     HomeScreen,
-    AboutScreen,
     VideoCatalogScreen
 } from './screens';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -16,7 +15,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 export default function App() {
-    Config.setConfig({ appScheme: 'dark' });
+    Config.setConfig({ appScheme: 'light' });
 
     Colors.loadSchemes({
         light: {
@@ -44,14 +43,18 @@ export default function App() {
 
     function VideoStackScreen() {
         return (
-            <VideoStack.Navigator>
+            <VideoStack.Navigator
+                screenOptions={{
+                    headerShown: false,
+                }}
+            >
                 <VideoStack.Screen
                     name={Screens.VideoCatalogScreen}
                     component={VideoCatalogScreen}
                 />
                 <VideoStack.Screen
-                    name={Screens.EpisodeScreen}
-                    component={EpisodeScreen}
+                    name={Screens.VideoScreen}
+                    component={VideoScreen}
                 />
             </VideoStack.Navigator>
         );
@@ -64,12 +67,11 @@ export default function App() {
                     screenOptions={{
                         headerShown: false,
                         tabBarActiveTintColor: '#e91e63',
-                        tabBarActiveBackgroundColor: '#000',
+                        tabBarActiveBackgroundColor: Colors.screenBG,
                     }}
                 >
-                    <Tab.Screen name={Screens.HomeScreen} component={HomeScreen} />
-                    <Tab.Screen name={Screens.AboutScreen} component={AboutScreen} />
-                    <Tab.Screen name={Screens.VideoCatalogScreen} component={VideoStackScreen} />
+                    <Tab.Screen name='Home' component={HomeScreen} />
+                    <Tab.Screen name='Videos' component={VideoStackScreen} />
                 </Tab.Navigator>
             </NavigationContainer>
         </React.StrictMode>
@@ -86,7 +88,7 @@ export default function App() {
     }}
 >
     <Stack.Screen name={Screens.HomeScreen} component={HomeScreen} />
-    <Stack.Screen name={Screens.EpisodeScreen} component={EpisodeScreen} />
+    <Stack.Screen name={Screens.VideoScreen} component={VideoScreen} />
     <Stack.Screen name={Screens.AboutScreen} component={AboutScreen} />
 </Stack.Navigator>
 */
