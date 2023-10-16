@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationProps } from '../commonTypes';
 import { Button, Text, Image, View } from 'react-native-ui-lib';
-import { ImageSourcePropType, ScrollView } from 'react-native';
+import { ImageSourcePropType, Linking, ScrollView } from 'react-native';
 import { Layout } from '../components/Layout';
 
 type Officer = {
@@ -43,9 +43,9 @@ const officers: Officer[] = [
     }
 ]
 
-const HomeScreen = (props: NavigationProps) => {
+const AboutScreen = (props: NavigationProps) => {
     const onPressDiscord = () => {
-        console.log('on press discord');
+        Linking.openURL('https://discord.gg/5SyB3yx');
     };
     return (
         <Layout style={{marginHorizontal:20}}>
@@ -98,4 +98,4 @@ const HomeScreen = (props: NavigationProps) => {
     );
 };
 
-export { HomeScreen }
+export { AboutScreen }

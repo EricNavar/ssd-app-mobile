@@ -9,7 +9,7 @@ export type Video = {
 
 export enum Screens {
     VideoScreen = 'VideoScreen',
-    HomeScreen = 'HomeScreen',
+    AboutScreen = 'AboutScreen',
     VideoCatalogScreen = 'VideoCatalogScreen'
 }
 

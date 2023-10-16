@@ -4,14 +4,15 @@ import Config from 'react-native-ui-lib/config';
 // require('react-native-ui-lib/config').setConfig({ appScheme: 'dark' });
 import {
     VideoScreen,
-    HomeScreen,
+    AboutScreen,
     VideoCatalogScreen
 } from './screens';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { Screens } from './commonTypes';
-import { Colors } from 'react-native-ui-lib';
+import { Colors, Icon } from 'react-native-ui-lib';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { ImageSourcePropType } from 'react-native';
 
 
 export default function App() {
@@ -60,17 +61,30 @@ export default function App() {
         );
     }
 
+    const icons: Record<string, ImageSourcePropType > = {
+        "About": require('./assets/icons/info.png'),
+        "Videos": require('./assets/icons/video.png')
+    }
+
     return (
         <React.StrictMode>
             <NavigationContainer>
                 <Tab.Navigator
-                    screenOptions={{
+                    screenOptions={({route})=> ({
                         headerShown: false,
-                        tabBarActiveTintColor: '#e91e63',
+                        tabBarActiveTintColor: '#00509a',
                         tabBarActiveBackgroundColor: Colors.screenBG,
-                    }}
+                        tabBarIcon: () => {
+                            return (
+                                <Icon
+                                    source={icons[route.name]}
+                                    size={24}
+                                />
+                            );
+                        },
+                    })}
                 >
-                    <Tab.Screen name='Home' component={HomeScreen} />
+                    <Tab.Screen name='About' component={AboutScreen} />
                     <Tab.Screen name='Videos' component={VideoStackScreen} />
                 </Tab.Navigator>
             </NavigationContainer>
@@ -87,7 +101,7 @@ export default function App() {
         }
     }}
 >
-    <Stack.Screen name={Screens.HomeScreen} component={HomeScreen} />
+    <Stack.Screen name={Screens.AboutScreen} component={AboutScreen} />
     <Stack.Screen name={Screens.VideoScreen} component={VideoScreen} />
     <Stack.Screen name={Screens.AboutScreen} component={AboutScreen} />
 </Stack.Navigator>

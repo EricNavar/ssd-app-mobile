@@ -1,3 +1,3 @@
 export { VideoScreen } from './VideoScreen';
-export { HomeScreen } from './HomeScreen';
+export { AboutScreen } from './AboutScreen';
 export { VideoCatalogScreen } from './VideoCatalogScreen';
