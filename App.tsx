@@ -83,6 +83,7 @@ export default function App() {
                             );
                         },
                     })}
+                    sceneContainerStyle={{backgroundColor: Colors.screenBG}}
                 >
                     <Tab.Screen name='About' component={AboutScreen} />
                     <Tab.Screen name='Videos' component={VideoStackScreen} />

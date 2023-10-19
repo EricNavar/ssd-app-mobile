@@ -8,12 +8,10 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const VideoCatalogScreen = (props: NavigationProps) => {
     return (
-        <Layout style={{ marginHorizontal: 16 }}>
-            <ScrollView>
-                <GestureHandlerRootView>
-                    <VideosGroup detaultSemester="Fall 2022" navigation={props.navigation} />
-                </GestureHandlerRootView>
-            </ScrollView>
+        <Layout style={{paddingHorizontal:20}}>
+            <GestureHandlerRootView>
+                <VideosGroup detaultSemester="Fall 2023" navigation={props.navigation} />
+            </GestureHandlerRootView>
         </Layout>
     );
 };

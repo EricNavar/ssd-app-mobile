@@ -36,30 +36,28 @@ const VideoScreen = (props: VideoScreenProps) => {
 
     return (
         <Layout>
-            <ScrollView>
-                <GestureHandlerRootView>
-                    <TouchableOpacity onPress={() => { props.navigation.goBack() }}>
-                        <Image
-                            style={{ width: 20, height: 20, margin: 16 }}
-                            source={require('../assets/icons/back.png')}
-                        />
-                    </TouchableOpacity>
-                    <VideoPlayer
-                        thumbnail={`https://ds1cu037r68vs.cloudfront.net/${video.semester} - ${video.title}.png`}
-                        source={video.src}
+            <GestureHandlerRootView>
+                <TouchableOpacity onPress={() => { props.navigation.goBack() }}>
+                    <Image
+                        style={{ width: 20, height: 20, margin: 16 }}
+                        source={require('../assets/icons/back.png')}
                     />
-                    <Text style={{ fontSize: 20, marginBottom: 8 }}>
-                        {video.semester} - {video.title}
-                    </Text>
-                    <Text style={{ marginBottom: 40 }}>
-                        {video.description}
-                    </Text>
-                    <Text style={{ marginBottom: 16, fontSize: 20 }}>
-                        More videos
-                    </Text>
-                    <VideosGroup detaultSemester={video.semester} navigation={props.navigation} />
-                </GestureHandlerRootView>
-            </ScrollView>
+                </TouchableOpacity>
+                <VideoPlayer
+                    thumbnail={`https://ds1cu037r68vs.cloudfront.net/${video.semester} - ${video.title}.png`}
+                    source={video.src}
+                />
+                <Text style={{ fontSize: 20, marginBottom: 8 }}>
+                    {video.semester} - {video.title}
+                </Text>
+                <Text style={{ marginBottom: 40 }}>
+                    {video.description}
+                </Text>
+                <Text style={{ marginBottom: 16, fontSize: 20 }}>
+                    More videos
+                </Text>
+                <VideosGroup detaultSemester={video.semester} navigation={props.navigation} />
+            </GestureHandlerRootView>
         </Layout>
     );
 }
