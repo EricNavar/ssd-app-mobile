@@ -59,7 +59,7 @@ const AboutScreen = (props: NavigationProps) => {
         Linking.openURL('https://discord.gg/5SyB3yx');
     };
     return (
-        <Layout style={{paddingHorizontal:20}}>
+        <Layout style={{ paddingHorizontal: 20 }}>
             <Image
                 style={{ width: 100, height: 100, marginBottom: 12 }}
                 source={require('../assets/images/ssd.png')}
@@ -78,29 +78,51 @@ const AboutScreen = (props: NavigationProps) => {
             </Text>
             <Button
                 label='Discord' onPress={onPressDiscord}
-                style={{ width: 100, justifyContent: 'flex-start', marginBottom:20 }}
+                style={{ width: 100, justifyContent: 'flex-start', marginBottom: 20 }}
             />
             <Carousel
                 // autoplay
                 // autoplayInterval={5000}
-                containerStyle={{height:300}}
+                containerStyle={{ height: 300 }}
                 showCounter
             >
-                {images.map((image, index)=>
-                    <View style={{alignContent:'center', alignItems:'center', width:'100%', height:300}} key={index}>
-                        <Image source={image.source} style={{maxHeight:300, maxWidth:'100%', aspectRatio:image.aspectRatio, marginHorizontal: 'auto'}}/>
+                {images.map((image, index) =>
+                    <View style={{ alignContent: 'center', alignItems: 'center', width: '100%', height: 300 }} key={index}>
+                        <Image source={image.source} style={{ maxHeight: 300, maxWidth: '100%', aspectRatio: image.aspectRatio, marginHorizontal: 'auto' }} />
                     </View>
                 )}
             </Carousel>
             <Text text50 style={{ marginTop: 80 }}>
                 Upcoming meetings
             </Text>
-            <Text text70 style={{ marginBottom: 6 }}>
-                - 11/14: AMA with Joebama
-            </Text>
-            <Text text70 style={{ marginBottom: 6 }}>
-                - 11/28: Raid Blake's apartment (details coming soon)
-            </Text>
+            <View style={{
+                backgroundColor: 'lightblue',
+                padding: 16,
+                marginBottom: 12,
+                borderRadius: 8,
+                borderTopColor: 'white',
+                borderBottomColor: 'gray',
+                borderTopWidth: .5,
+                borderBottomWidth: .5
+            }}>
+                <Text text70 style={{ marginBottom: 6 }}>
+                    11/14: AMA with Joebama
+                </Text>
+            </View>
+            <View style={{
+                backgroundColor: 'lightblue',
+                padding: 16,
+                marginBottom: 12,
+                borderRadius: 8,
+                borderTopColor: 'white',
+                borderBottomColor: 'gray',
+                borderTopWidth: .5,
+                borderBottomWidth: .5
+            }}>
+                <Text text70 style={{ marginBottom: 6 }}>
+                    11/28: Raid Blake's apartment (he does not deserve ownership of things)
+                </Text>
+            </View>
             <Text text50 style={{ marginTop: 80 }}>Who is on the board of SSD?</Text>
             <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                 {officers.map((officer: Officer, index: number) =>
