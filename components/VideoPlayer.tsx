@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 import { Video, ResizeMode, AVPlaybackStatus } from 'expo-av';
 
 type VideoPlayerProps = {
@@ -14,15 +14,21 @@ export const VideoPlayer = (props: VideoPlayerProps) => {
   return (
     <Video
       style={styles.video}
-      // usePoster={true}
       source={{
         uri: props.source,
       }}
       useNativeControls
       resizeMode={ResizeMode.CONTAIN}
-      posterSource={{ uri: props.thumbnail }}
       onPlaybackStatusUpdate={status => setStatus(status)}
-    />
+      usePoster={true}
+      posterSource={{ uri: props.thumbnail }}
+      shouldPlay={true}
+    >
+      <Image
+        style={{ width: '100%', height: 100, marginBottom: 12 }}
+        source={{uri:props.thumbnail}}
+      />
+    </Video>
   );
 }
 

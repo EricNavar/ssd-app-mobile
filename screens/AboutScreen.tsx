@@ -99,7 +99,7 @@ const AboutScreen = (props: NavigationProps) => {
                 - 11/14: AMA with Joebama
             </Text>
             <Text text70 style={{ marginBottom: 6 }}>
-                - 11/21: Lightning Talks
+                - 11/28: Raid Blake's apartment (details coming soon)
             </Text>
             <Text text50 style={{ marginTop: 80 }}>Who is on the board of SSD?</Text>
             <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>

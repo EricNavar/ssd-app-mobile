@@ -6,7 +6,6 @@ import { Video, NavigationProps } from '../commonTypes';
 import { VideoPlayer } from '../components/VideoPlayer';
 import { Layout } from '../components/Layout';
 import { VideosGroup } from '../components/VideosGroup';
-import { getVideo } from '../util';
 
 type VideoScreenProps = {
     route: {
@@ -44,7 +43,7 @@ const VideoScreen = (props: VideoScreenProps) => {
                     />
                 </TouchableOpacity>
                 <VideoPlayer
-                    thumbnail={`https://ds1cu037r68vs.cloudfront.net/${video.semester} - ${video.title}.png`}
+                    thumbnail={`https://ds1cu037r68vs.cloudfront.net/${video.semester}--${video.title}.png`}
                     source={video.src}
                 />
                 <Text style={{ fontSize: 20, marginBottom: 8 }}>
