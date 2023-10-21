@@ -6,6 +6,13 @@ import { Video, NavigationProps } from '../commonTypes';
 import { VideoPlayer } from '../components/VideoPlayer';
 import { Layout } from '../components/Layout';
 import { VideosGroup } from '../components/VideosGroup';
+import styled from 'styled-components/native';
+
+const BackIcon = styled(Image)({
+    width: 20,
+    height: 20,
+    margin: 16
+});
 
 type VideoScreenProps = {
     route: {
@@ -37,8 +44,7 @@ const VideoScreen = (props: VideoScreenProps) => {
         <Layout>
             <GestureHandlerRootView>
                 <TouchableOpacity onPress={() => { props.navigation.goBack() }}>
-                    <Image
-                        style={{ width: 20, height: 20, margin: 16 }}
+                    <BackIcon
                         source={require('../assets/icons/back.png')}
                     />
                 </TouchableOpacity>
@@ -46,13 +52,13 @@ const VideoScreen = (props: VideoScreenProps) => {
                     thumbnail={`https://ds1cu037r68vs.cloudfront.net/${video.semester}--${video.title}.png`}
                     source={video.src}
                 />
-                <Text style={{ fontSize: 20, marginBottom: 8 }}>
+                <Text text60 marginB-8>
                     {video.semester} - {video.title}
                 </Text>
-                <Text style={{ marginBottom: 40 }}>
+                <Text marginB-40>
                     {video.description}
                 </Text>
-                <Text style={{ marginBottom: 16, fontSize: 20 }}>
+                <Text text60 marginB-16>
                     More videos
                 </Text>
                 <VideosGroup detaultSemester={video.semester} navigation={props.navigation} />

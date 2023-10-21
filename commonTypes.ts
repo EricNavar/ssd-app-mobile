@@ -43,3 +43,8 @@ export enum Semester {
     "2024 Summer",
     "2024 Fall"
 }
+
+export type SSDEvent = {
+    title: string;
+    date: string;
+}

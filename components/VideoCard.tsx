@@ -1,7 +1,14 @@
 
 import { Suspense } from 'react';
 import { Video, NavigationProps, Screens } from '../commonTypes';
-import { Text, Image, TouchableOpacity, View } from 'react-native-ui-lib';
+import { Text, TouchableOpacity, View } from 'react-native-ui-lib';
+import styled from 'styled-components/native';
+
+const Thumbnail = styled.Image({
+  width: 341,
+  height: 192,
+  borderRadius: 4
+});
 
 export const VideoCard = (props: { video: Video } & NavigationProps) => {
   const video = props.video;
@@ -12,14 +19,13 @@ export const VideoCard = (props: { video: Video } & NavigationProps) => {
   };
 
   return (
-    <TouchableOpacity onPress={onPress} style={{ marginTop: 16 }}>
+    <TouchableOpacity onPress={onPress} marginT-16>
       <Suspense fallback={<View/>}>
-        <Image
+        <Thumbnail
           source={{ uri: `https://ds1cu037r68vs.cloudfront.net/${video.semester}--${video.title}.png` }}
-          style={{ width: 341, height: 192, borderRadius: 4 }}
         />
       </Suspense>
-      <Text style={{ fontSize: 16, marginTop: 4 }}>
+      <Text text70 marginT-4>
         {video.title}
       </Text>
     </TouchableOpacity>

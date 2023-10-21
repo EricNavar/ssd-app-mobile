@@ -47,7 +47,7 @@ const VideosGroup = (props: { detaultSemester: string } & NavigationProps) => {
           value={semester}
           onChange={handleChange}
           useSafeArea
-          trailingAccessory={<Icon style={{ height: 16, width: 16 }} source={dropdown} tintColor={Colors.textColor} />}
+          trailingAccessory={<Icon size={16} source={dropdown} tintColor={Colors.textColor} />}
           fieldType={Picker.fieldTypes.filter}
           useWheelPicker
         >
