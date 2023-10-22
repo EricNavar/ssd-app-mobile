@@ -1,10 +1,16 @@
 import React from 'react';
-import { NavigationProps, SSDEvent } from '../commonTypes';
-import { Layout } from '../components/Layout';
-import { View } from 'react-native';
-import { Button, Text } from 'react-native-ui-lib';
+import { TouchableOpacity, View } from 'react-native';
+import { Button, Text, Image } from 'react-native-ui-lib';
 import moment from 'moment';
 import styled from 'styled-components/native';
+import { NavigationProps, SSDEvent } from '../commonTypes';
+import { Layout } from '../components/Layout';
+
+const BackIcon = styled(Image)({
+    width: 20,
+    height: 20,
+    margin: 16
+});
 
 type EventDetailsScreenProps = {
     route: {
@@ -24,6 +30,11 @@ const EventDetailsScreen = (props: EventDetailsScreenProps) => {
     const { event } = props.route.params;
     return (
         <Layout style={{ paddingHorizontal: 20 }}>
+                            <TouchableOpacity onPress={() => { props.navigation.goBack() }}>
+                    <BackIcon
+                        source={require('../assets/icons/back.png')}
+                    />
+                </TouchableOpacity>
             <View>
                 <Text text60>
                     {event.title}

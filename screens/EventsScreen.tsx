@@ -4,6 +4,7 @@ import { Text, View } from 'react-native-ui-lib';
 import { Layout } from '../components/Layout';
 import styled from 'styled-components/native';
 import moment from 'moment';
+import { events } from '../data';
 
 const Event = styled.TouchableOpacity({
     backgroundColor: 'lightblue',
@@ -15,21 +16,6 @@ const Event = styled.TouchableOpacity({
     borderTopWidth: .5,
     borderBottomWidth: .5
 });
-
-const events: SSDEvent[] = [
-    {
-        date: new Date('1995-12-21T03:24:00').getTime(),
-        title: 'AMA with Joebama',
-        location: 'CIS A101',
-        description: 'description'
-    },
-    {
-        date: new Date('1995-12-17T03:24:00').getTime(),
-        title: 'Raid Blake\'s apartment (he does not deserve ownership of things)',
-        location: 'Blake\'s apartment',
-        description: 'description'
-    }
-]
 
 const EventsScreen = (props: NavigationProps) => {
     const onPressEvent = (event: SSDEvent) => {

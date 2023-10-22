@@ -1,3 +1,5 @@
+import { ImageSourcePropType } from "react-native";
+
 export type Video = {
     _id: string;
     semester: string;
@@ -51,4 +53,10 @@ export type SSDEvent = {
     date: number;
     location: string;
     description: string;
+}
+
+export type Officer = {
+    name: string;
+    position: string;
+    image: ImageSourcePropType;
 }

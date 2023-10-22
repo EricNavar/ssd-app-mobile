@@ -1,47 +1,9 @@
 import React from 'react';
 import { Button, Text, Image, View, Carousel } from 'react-native-ui-lib';
-import { ImageProps, ImageSourcePropType, Linking } from 'react-native';
+import { ImageProps, Linking } from 'react-native';
 import { Layout } from '../components/Layout';
 import styled from 'styled-components/native';
-
-type Officer = {
-    name: string;
-    position: string;
-    image: ImageSourcePropType;
-}
-
-const officers: Officer[] = [
-    {
-        name: 'Yonas Bahre',
-        position: 'President',
-        image: require('../assets/images/yonas.png')
-    },
-    {
-        name: 'Michael Hayworth',
-        position: 'Vice President',
-        image: require('../assets/images/michael.jpg')
-    },
-    {
-        name: 'Stephen',
-        position: 'stephen',
-        image: require('../assets/images/stephen.jpg')
-    },
-    {
-        name: 'Param Gupta',
-        position: 'Program Officer',
-        image: require('../assets/images/param.jpg')
-    },
-    {
-        name: 'Angel',
-        position: 'Outreach Officer',
-        image: require('../assets/images/angel.png')
-    },
-    {
-        name: 'CJ Weir',
-        position: 'Involvement Officer',
-        image: require('../assets/images/cj.png')
-    }
-]
+import { officers } from '../data';
 
 const images = [
     {

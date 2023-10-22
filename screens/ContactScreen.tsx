@@ -15,7 +15,7 @@ const ContactScreen = () => {
     }
 
     return (
-        <Layout>
+        <Layout style={{paddingHorizontal: 20}}>
             <View>
                 <View style={{display:'flex', flexDirection:'row', marginBottom: 20}}>
                     <Text text70>Email: </Text>
