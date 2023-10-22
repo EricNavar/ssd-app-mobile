@@ -13,6 +13,9 @@ import { Screens } from './commonTypes';
 import { Colors, Icon } from 'react-native-ui-lib';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ImageSourcePropType } from 'react-native';
+import { EventsScreen } from './screens/EventsScreen';
+import { EventDetailsScreen } from './screens/EventDetailsScreen';
+import { ContactScreen } from './screens/ContactScreen';
 
 
 export default function App() {
@@ -39,9 +42,7 @@ export default function App() {
         },
     });
 
-    const Tab = createBottomTabNavigator();
     const VideoStack = createNativeStackNavigator();
-
     function VideoStackScreen() {
         return (
             <VideoStack.Navigator
@@ -61,11 +62,34 @@ export default function App() {
         );
     }
 
-    const icons: Record<string, ImageSourcePropType > = {
-        "About": require('./assets/icons/info.png'),
-        "Videos": require('./assets/icons/video.png')
+    const EventsStack = createNativeStackNavigator();
+    function EventsStackScreen() {
+        return (
+            <EventsStack.Navigator
+                screenOptions={{
+                    headerShown: false,
+                }}
+            >
+                <EventsStack.Screen
+                    name={Screens.EventsScreen}
+                    component={EventsScreen}
+                />
+                <EventsStack.Screen
+                    name={Screens.EventDetailsScreen}
+                    component={EventDetailsScreen}
+                />
+            </EventsStack.Navigator>
+        );
     }
 
+    const icons: Record<string, ImageSourcePropType > = {
+        "About": require('./assets/icons/info.png'),
+        "Videos": require('./assets/icons/video.png'),
+        "Events": require('./assets/icons/planner.png'),
+        "Contact": require('./assets/icons/planner.png'),
+    }
+
+    const Tab = createBottomTabNavigator();
     return (
         <React.StrictMode>
             <NavigationContainer>
@@ -86,7 +110,9 @@ export default function App() {
                     sceneContainerStyle={{backgroundColor: Colors.screenBG}}
                 >
                     <Tab.Screen name='About' component={AboutScreen} />
+                    <Tab.Screen name='Contact' component={ContactScreen} />
                     <Tab.Screen name='Videos' component={VideoStackScreen} />
+                    <Tab.Screen name='Events' component={EventsStackScreen} />
                 </Tab.Navigator>
             </NavigationContainer>
         </React.StrictMode>

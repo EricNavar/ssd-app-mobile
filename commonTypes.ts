@@ -10,7 +10,9 @@ export type Video = {
 export enum Screens {
     VideoScreen = 'VideoScreen',
     AboutScreen = 'AboutScreen',
-    VideoCatalogScreen = 'VideoCatalogScreen'
+    VideoCatalogScreen = 'VideoCatalogScreen',
+    EventsScreen = 'EventsScreen',
+    EventDetailsScreen = 'EventDetailsScreen',
 }
 
 export type NavigationProps = {
@@ -46,5 +48,7 @@ export enum Semester {
 
 export type SSDEvent = {
     title: string;
-    date: string;
+    date: number;
+    location: string;
+    description: string;
 }

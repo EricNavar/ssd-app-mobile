@@ -11,17 +11,6 @@ type Officer = {
     image: ImageSourcePropType;
 }
 
-const Event = styled.View({
-    backgroundColor: 'lightblue',
-    padding: 16,
-    marginBottom: 12,
-    borderRadius: 8,
-    borderTopColor: 'white',
-    borderBottomColor: 'gray',
-    borderTopWidth: .5,
-    borderBottomWidth: .5
-});
-
 const officers: Officer[] = [
     {
         name: 'Yonas Bahre',
@@ -63,17 +52,6 @@ const images = [
     {
         source: require('../assets/images/photo2.jpg'),
         aspectRatio: 1.333
-    }
-]
-
-const events: SSDEvent[] = [
-    {
-        date: '11/14',
-        title: 'AMA with Joebama'
-    },
-    {
-        date: '11/28',
-        title: 'Raid Blake\'s apartment (he does not deserve ownership of things)'
     }
 ]
 
@@ -158,15 +136,6 @@ const AboutScreen = () => {
             <Text text50 marginT-80>
                 Upcoming meetings
             </Text>
-            <>
-                {events.map((event: SSDEvent, index: number) => (
-                    <Event key={index}>
-                        <Text text70>
-                            {event.date}: {event.title}
-                        </Text>
-                    </Event>
-                ))}
-            </>
             <Text text50 marginT-80>Who is on the board of SSD?</Text>
             <OfficerContainer>
                 {officers.map((officer: Officer, index: number) =>
