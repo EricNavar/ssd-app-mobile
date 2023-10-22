@@ -31,7 +31,7 @@ const events: SSDEvent[] = [
     }
 ]
 
-const EventsScreen = (props:NavigationProps) => {
+const EventsScreen = (props: NavigationProps) => {
     const onPressEvent = (event: SSDEvent) => {
         props.navigation.navigate(Screens.EventDetailsScreen, {
             event: event
@@ -42,7 +42,7 @@ const EventsScreen = (props:NavigationProps) => {
         <Layout style={{ paddingHorizontal: 20 }}>
             <>
                 {events.map((event: SSDEvent, index: number) => (
-                    <Event key={index} onPress={()=>onPressEvent(event)}>
+                    <Event key={index} onPress={() => onPressEvent(event)}>
                         <Text text60>
                             {event.title}
                         </Text>

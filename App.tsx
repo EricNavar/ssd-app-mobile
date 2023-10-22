@@ -1,22 +1,13 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import Config from 'react-native-ui-lib/config';
-// require('react-native-ui-lib/config').setConfig({ appScheme: 'dark' });
-import {
-    VideoScreen,
-    AboutScreen,
-    VideoCatalogScreen
-} from './screens';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
-import { Screens } from './commonTypes';
-import { Colors, Icon } from 'react-native-ui-lib';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { Colors, Icon } from 'react-native-ui-lib';
 import { ImageSourcePropType } from 'react-native';
-import { EventsScreen } from './screens/EventsScreen';
-import { EventDetailsScreen } from './screens/EventDetailsScreen';
-import { ContactScreen } from './screens/ContactScreen';
-
+import * as screens from './screens';
+import { Screens } from './commonTypes';
 
 export default function App() {
     Config.setConfig({ appScheme: 'light' });
@@ -52,11 +43,11 @@ export default function App() {
             >
                 <VideoStack.Screen
                     name={Screens.VideoCatalogScreen}
-                    component={VideoCatalogScreen}
+                    component={screens.VideoCatalogScreen}
                 />
                 <VideoStack.Screen
                     name={Screens.VideoScreen}
-                    component={VideoScreen}
+                    component={screens.VideoScreen}
                 />
             </VideoStack.Navigator>
         );
@@ -72,21 +63,21 @@ export default function App() {
             >
                 <EventsStack.Screen
                     name={Screens.EventsScreen}
-                    component={EventsScreen}
+                    component={screens.EventsScreen}
                 />
                 <EventsStack.Screen
                     name={Screens.EventDetailsScreen}
-                    component={EventDetailsScreen}
+                    component={screens.EventDetailsScreen}
                 />
             </EventsStack.Navigator>
         );
     }
 
-    const icons: Record<string, ImageSourcePropType > = {
+    const icons: Record<string, ImageSourcePropType> = {
         "About": require('./assets/icons/info.png'),
         "Videos": require('./assets/icons/video.png'),
         "Events": require('./assets/icons/planner.png'),
-        "Contact": require('./assets/icons/planner.png'),
+        "Contact": require('./assets/icons/contact.png'),
     }
 
     const Tab = createBottomTabNavigator();
@@ -94,7 +85,7 @@ export default function App() {
         <React.StrictMode>
             <NavigationContainer>
                 <Tab.Navigator
-                    screenOptions={({route})=> ({
+                    screenOptions={({ route }) => ({
                         headerShown: false,
                         tabBarActiveTintColor: '#00509a',
                         tabBarActiveBackgroundColor: Colors.screenBG,
@@ -107,10 +98,10 @@ export default function App() {
                             );
                         },
                     })}
-                    sceneContainerStyle={{backgroundColor: Colors.screenBG}}
+                    sceneContainerStyle={{ backgroundColor: Colors.screenBG }}
                 >
-                    <Tab.Screen name='About' component={AboutScreen} />
-                    <Tab.Screen name='Contact' component={ContactScreen} />
+                    <Tab.Screen name='About' component={screens.AboutScreen} />
+                    <Tab.Screen name='Contact' component={screens.ContactScreen} />
                     <Tab.Screen name='Videos' component={VideoStackScreen} />
                     <Tab.Screen name='Events' component={EventsStackScreen} />
                 </Tab.Navigator>

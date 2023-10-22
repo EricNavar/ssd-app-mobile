@@ -8,11 +8,11 @@ export type Video = {
 }
 
 export enum Screens {
-    VideoScreen = 'VideoScreen',
-    AboutScreen = 'AboutScreen',
-    VideoCatalogScreen = 'VideoCatalogScreen',
-    EventsScreen = 'EventsScreen',
-    EventDetailsScreen = 'EventDetailsScreen',
+    VideoScreen = 'Videos',
+    AboutScreen = 'About',
+    VideoCatalogScreen = 'Video Catalog',
+    EventsScreen = 'Events',
+    EventDetailsScreen = 'Event Details',
 }
 
 export type NavigationProps = {

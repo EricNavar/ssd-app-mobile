@@ -1,7 +1,6 @@
 import React from 'react';
-import { SSDEvent } from '../commonTypes';
 import { Button, Text, Image, View, Carousel } from 'react-native-ui-lib';
-import { ImageProps, ImageSourcePropType, Linking, ScrollView } from 'react-native';
+import { ImageProps, ImageSourcePropType, Linking } from 'react-native';
 import { Layout } from '../components/Layout';
 import styled from 'styled-components/native';
 

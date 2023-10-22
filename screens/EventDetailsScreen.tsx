@@ -21,9 +21,9 @@ const MiddleButton = styled(Button)({
 });
 
 const EventDetailsScreen = (props: EventDetailsScreenProps) => {
-    const {event} = props.route.params;
+    const { event } = props.route.params;
     return (
-        <Layout style={{paddingHorizontal: 20}}>
+        <Layout style={{ paddingHorizontal: 20 }}>
             <View>
                 <Text text60>
                     {event.title}
@@ -34,10 +34,10 @@ const EventDetailsScreen = (props: EventDetailsScreenProps) => {
                 <Text text70>
                     {event.description}
                 </Text>
-                <View style={{display:'flex', flexDirection: 'row'}}>
-                    <Button label='going' borderRadius={0} flex/>
-                    <MiddleButton label='intrested' borderRadius={0} flex/>
-                    <Button label='not going' borderRadius={0} flex/>
+                <View style={{ display: 'flex', flexDirection: 'row' }}>
+                    <Button label='going' borderRadius={0} flex />
+                    <MiddleButton label='intrested' borderRadius={0} flex />
+                    <Button label='not going' borderRadius={0} flex />
                 </View>
             </View>
         </Layout>
