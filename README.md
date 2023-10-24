@@ -1,6 +1,6 @@
 # SSD app
 
-- This is SSD's unofficial app.
+- This is the unofficial app of Society of Software Developers (SSD)
 - I created this app to keep a record of SSD's history
 - [how i deployed the app](Expo.md)
 - this uses the [ssd-api](https://github.com/ericnavar/ssd-api)
@@ -8,6 +8,7 @@
 # Contributing
 
 - This repository is open to PRs and new contributors
+- I am willing to transfer ownership of this repository to [SSD](https://github.com/ufssd)
 
 ## Potential  for the future
 
