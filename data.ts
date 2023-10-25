@@ -1,4 +1,4 @@
-import { Officer, SSDEvent } from "./commonTypes";
+import { Officer, SSDEvent } from './commonTypes';
 
 export const officers: Officer[] = [
     {
@@ -31,7 +31,7 @@ export const officers: Officer[] = [
         position: 'Involvement Officer',
         image: require('./assets/images/cj.png')
     }
-]
+];
 
 export const events: SSDEvent[] = [
     {
@@ -46,4 +46,4 @@ export const events: SSDEvent[] = [
         location: 'Blake\'s apartment',
         description: 'description'
     }
-]
+];

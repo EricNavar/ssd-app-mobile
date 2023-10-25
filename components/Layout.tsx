@@ -1,19 +1,19 @@
 import React, { useEffect, useRef } from 'react';
 import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
 import styled from 'styled-components/native';
-import { Colors, View } from 'react-native-ui-lib';
+import { Colors } from 'react-native-ui-lib';
 
 export const StyledView = styled(SafeAreaView)({
     height: '100%',
     backgroundColor: Colors.screenBG
 });
 
-export const Layout = (props: {children:JSX.Element | JSX.Element[], style?: any}) => {
+export const Layout = (props: {children:JSX.Element | JSX.Element[], style?: object}) => {
     useEffect(()=>{
         scrollRef.current?.scrollTo({
             y: 0,
             animated: true,
-          });
+        });
     });
 
     const scrollRef = useRef();
@@ -28,5 +28,5 @@ export const Layout = (props: {children:JSX.Element | JSX.Element[], style?: any
                 {props.children}
             </ScrollView>
         </StyledView>
-    )
+    );
 };

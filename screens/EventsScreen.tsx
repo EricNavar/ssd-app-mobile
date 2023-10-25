@@ -26,6 +26,9 @@ const EventsScreen = (props: NavigationProps) => {
 
     return (
         <Layout style={{ paddingHorizontal: 20 }}>
+            <Text text50 marginT-80>
+                Upcoming meetings
+            </Text>
             <>
                 {events.map((event: SSDEvent, index: number) => (
                     <Event key={index} onPress={() => onPressEvent(event)}>
@@ -33,7 +36,7 @@ const EventsScreen = (props: NavigationProps) => {
                             {event.title}
                         </Text>
                         <Text text70>
-                            {moment(event.date).format("M[/]D [@] hh:mm")} • {event.location}
+                            {moment(event.date).format('M[/]D [@] hh:mm')} • {event.location}
                         </Text>
                     </Event>
                 ))}
@@ -43,4 +46,4 @@ const EventsScreen = (props: NavigationProps) => {
     );
 };
 
-export { EventsScreen }
+export { EventsScreen };

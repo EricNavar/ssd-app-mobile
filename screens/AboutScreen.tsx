@@ -13,8 +13,12 @@ const images = [
     {
         source: require('../assets/images/photo2.jpg'),
         aspectRatio: 1.333
+    },
+    {
+        source: require('../assets/images/photo3.jpg'),
+        aspectRatio: 1.333
     }
-]
+];
 
 const CarouselImage = styled.Image<ImageProps & { aspectRatio: number }>((props) => ({
     maxHeight: 300,
@@ -83,8 +87,6 @@ const AboutScreen = () => {
                 label='Discord' onPress={onPressDiscord}
             />
             <Carousel
-                // autoplay
-                // autoplayInterval={5000}
                 containerStyle={{ height: 300 }}
                 showCounter
             >
@@ -95,7 +97,7 @@ const AboutScreen = () => {
                 )}
             </Carousel>
             <Text text50 marginT-80>
-                Upcoming meetings
+                Posts
             </Text>
             <Text text50 marginT-80>Who is on the board of SSD?</Text>
             <OfficerContainer>
@@ -114,4 +116,4 @@ const AboutScreen = () => {
     );
 };
 
-export { AboutScreen }
+export { AboutScreen };

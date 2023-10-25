@@ -21,6 +21,7 @@
   - upcoming meetings
   - meeting date/time/location
   - semesters in which SSD has recorded meetings
+  - photos in the gallery on the about page
 - add more details about SSD and what it does, how to get involved
 - ensure that the app doesn't look like crap on Android (I've only tested on iOS)
 - add visual indicator for when video catalog screen is loading

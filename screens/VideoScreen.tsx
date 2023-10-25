@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, Image } from 'react-native-ui-lib';
 import { GestureHandlerRootView, TouchableOpacity } from 'react-native-gesture-handler';
-import { ScrollView } from 'react-native';
 import { Video, NavigationProps } from '../commonTypes';
 import { VideoPlayer } from '../components/VideoPlayer';
 import { Layout } from '../components/Layout';
@@ -37,13 +36,13 @@ const VideoScreen = (props: VideoScreenProps) => {
     // }, [props]);
 
     if (video === null || !video.semester) {
-        return <Text>Loading...</Text>
+        return <Text>Loading...</Text>;
     }
 
     return (
         <Layout>
             <GestureHandlerRootView>
-                <TouchableOpacity onPress={() => { props.navigation.goBack() }}>
+                <TouchableOpacity onPress={() => { props.navigation.goBack(); }}>
                     <BackIcon
                         source={require('../assets/icons/back.png')}
                     />
@@ -65,6 +64,6 @@ const VideoScreen = (props: VideoScreenProps) => {
             </GestureHandlerRootView>
         </Layout>
     );
-}
+};
 
 export { VideoScreen };

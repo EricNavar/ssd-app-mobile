@@ -30,17 +30,17 @@ const EventDetailsScreen = (props: EventDetailsScreenProps) => {
     const { event } = props.route.params;
     return (
         <Layout style={{ paddingHorizontal: 20 }}>
-                            <TouchableOpacity onPress={() => { props.navigation.goBack() }}>
-                    <BackIcon
-                        source={require('../assets/icons/back.png')}
-                    />
-                </TouchableOpacity>
+            <TouchableOpacity onPress={() => { props.navigation.goBack(); }}>
+                <BackIcon
+                    source={require('../assets/icons/back.png')}
+                />
+            </TouchableOpacity>
             <View>
                 <Text text60>
                     {event.title}
                 </Text>
                 <Text text70>
-                    {moment(event.date).format("M[/]D [@] hh:mm")} • {event.location}
+                    {moment(event.date).format('M[/]D [@] hh:mm')} • {event.location}
                 </Text>
                 <Text text70>
                     {event.description}
@@ -52,7 +52,7 @@ const EventDetailsScreen = (props: EventDetailsScreenProps) => {
                 </View>
             </View>
         </Layout>
-    )
+    );
 };
 
 export { EventDetailsScreen };

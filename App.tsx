@@ -74,11 +74,11 @@ export default function App() {
     }
 
     const icons: Record<string, ImageSourcePropType> = {
-        "About": require('./assets/icons/info.png'),
-        "Videos": require('./assets/icons/video.png'),
-        "Events": require('./assets/icons/planner.png'),
-        "Contact": require('./assets/icons/contact.png'),
-    }
+        'About': require('./assets/icons/info.png'),
+        'Videos': require('./assets/icons/video.png'),
+        'Events': require('./assets/icons/planner.png'),
+        'Contact': require('./assets/icons/contact.png'),
+    };
 
     const Tab = createBottomTabNavigator();
     return (

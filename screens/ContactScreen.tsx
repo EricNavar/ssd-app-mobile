@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, Assets } from 'react-native-ui-lib';
+import { View, Text, Button } from 'react-native-ui-lib';
 import { Layout } from '../components/Layout';
 import { ImageSourcePropType, Linking } from 'react-native';
 
@@ -9,10 +9,10 @@ const ContactScreen = () => {
     };
 
     const icons: Record<string, ImageSourcePropType > = {
-        "Discord": require('../assets/icons/discord.png'),
-        "Youtube": require('../assets/icons/youtube.png'),
-        "Instagram": require('../assets/icons/instagram.png'),
-    }
+        'Discord': require('../assets/icons/discord.png'),
+        'Youtube': require('../assets/icons/youtube.png'),
+        'Instagram': require('../assets/icons/instagram.png'),
+    };
 
     return (
         <Layout style={{paddingHorizontal: 20}}>
@@ -41,7 +41,7 @@ const ContactScreen = () => {
                 />
             </View>
         </Layout>
-    )
+    );
 };
 
 export { ContactScreen };
