@@ -1,7 +1,6 @@
 {
   "expo": {
-    "name": "better-watch-saul-mobile",
-    "slug": "better-watch-saul-mobile",
+    "name": "ssd-app-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,22 +21,22 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.ericnavar.betterwatchsaulmobile"
+      "package": "com.ericnavar.ssdappmobile"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "d3cfdf85-f80d-47e6-a539-c9917e671a74"
-      }
     },
     "owner": "ericnavar",
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
+    "extra": {
+      "eas": {
+        "projectId": "80134598-85e3-451d-9104-4a2974628446"
+      }
+    },
     "updates": {
-      "url": "https://u.expo.dev/d3cfdf85-f80d-47e6-a539-c9917e671a74"
+      "url": "https://u.expo.dev/80134598-85e3-451d-9104-4a2974628446"
     }
   }
 }

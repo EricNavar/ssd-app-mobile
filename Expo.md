@@ -17,7 +17,7 @@ nvm use 14.19.0
 - Helps you make a config file that will be used when your app is built
 
 `eas update`
-- Deploy
+- Deploy a build to expo. A QR
 
 `eas update --branch develop`
 - Deploy the develop branch
