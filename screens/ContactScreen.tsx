@@ -18,7 +18,7 @@ const ContactScreen = () => {
         <Layout style={{paddingHorizontal: 20}}>
             <View>
                 <View style={{display:'flex', flexDirection:'row', marginBottom: 20}}>
-                    <Text text70>Email: </Text>
+                    <Text text70>Shoot us an email and our President Yonas Bahre or the Ourtrach Officer Angel will reply: </Text>
                     <Button link label='ufssd.org@gmail.com' onPress={() => onPressSocial('ufssd.org@gmail.com')}/>
                 </View>
                 <Button

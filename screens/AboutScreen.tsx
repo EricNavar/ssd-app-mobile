@@ -3,24 +3,26 @@ import { Button, Text, Image, View, Carousel } from 'react-native-ui-lib';
 import { ImageProps, Linking } from 'react-native';
 import { Layout } from '../components/Layout';
 import styled from 'styled-components/native';
-import { officers } from '../data';
+import { officers, posts } from '../data';
+import { Officer, PostProps } from '../commonTypes';
+import { Post } from '../components/Post';
 
 const images = [
     {
-        source: require('../assets/images/photo1.jpg'),
-        aspectRatio: .75
+        source: require('../assets/images/photo3.jpg'),
+        aspectRatio: 1.333
     },
     {
         source: require('../assets/images/photo2.jpg'),
         aspectRatio: 1.333
     },
     {
-        source: require('../assets/images/photo3.jpg'),
-        aspectRatio: 1.333
+        source: require('../assets/images/photo1.jpg'),
+        aspectRatio: .75
     }
 ];
 
-const CarouselImage = styled.Image<ImageProps & { aspectRatio: number }>((props) => ({
+const CarouselImage = styled(Image)<ImageProps & { aspectRatio: number }>((props) => ({
     maxHeight: 300,
     maxWidth: '100%',
     aspectRatio: props.aspectRatio,
@@ -56,7 +58,6 @@ const DiscordButton = styled(Button)({
 const CarouselImageWrapper = styled(View)({
     alignContent: 'center',
     alignItems: 'center',
-    width: '100%',
     height: 300
 });
 
@@ -86,6 +87,9 @@ const AboutScreen = () => {
             <DiscordButton
                 label='Discord' onPress={onPressDiscord}
             />
+            <Text text50 marginT-80>
+                Gallery
+            </Text>
             <Carousel
                 containerStyle={{ height: 300 }}
                 showCounter
@@ -99,6 +103,16 @@ const AboutScreen = () => {
             <Text text50 marginT-80>
                 Posts
             </Text>
+            <Carousel
+                containerStyle={{ height: 400 }}
+                showCounter
+            >
+                {posts.map((post: PostProps, index: number) =>
+                    <CarouselImageWrapper key={index}>
+                        <Post {...post} />
+                    </CarouselImageWrapper>
+                )}
+            </Carousel>
             <Text text50 marginT-80>Who is on the board of SSD?</Text>
             <OfficerContainer>
                 {officers.map((officer: Officer, index: number) =>

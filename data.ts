@@ -1,4 +1,4 @@
-import { Officer, SSDEvent } from './commonTypes';
+import { Officer, PostProps, SSDEvent } from './commonTypes';
 
 export const officers: Officer[] = [
     {
@@ -47,3 +47,22 @@ export const events: SSDEvent[] = [
         description: 'description'
     }
 ];
+
+type NewType = PostProps;
+
+export const posts: NewType[] = [
+    {
+        title: 'Signin form',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSdmrFDLjn2wM4k77q_56I3aXJ7BqdDL7FArxH1aOAYc6Z8bMQ/viewform?usp=sf_link',
+        body: 'Please sign in we need it for student government funding :plead_emoji:',
+        image: require('./assets/images/breaking-bad-ps1.jpg')
+    },
+    {
+        
+        title: '11/7/23 Meeting survey',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSdftHGhWxedsAQF8iR3ljxkRiqc1vNpkIQOXaeRkA4jL4YDjA/viewform?usp=sf_link',
+        body: 'Give feedback on the mobile dev meeting from 11/7 and vote for if you want this next topic!',
+        image: require('./assets/images/chuck.png')
+    }
+];
+

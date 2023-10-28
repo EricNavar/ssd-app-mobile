@@ -60,3 +60,10 @@ export type Officer = {
     position: string;
     image: ImageSourcePropType;
 }
+
+export type PostProps = {
+    title: string;
+    link: string;
+    body: string;
+    image: ImageSourcePropType;
+}
