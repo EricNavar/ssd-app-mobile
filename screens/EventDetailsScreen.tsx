@@ -23,7 +23,7 @@ type EventDetailsScreenProps = {
 const MiddleButton = styled(Button)({
     borderLeftWidth: 1,
     borderRightWidth: 1,
-    borderColor: 'red',
+    borderColor: 'white',
 });
 
 const EventDetailsScreen = (props: EventDetailsScreenProps) => {

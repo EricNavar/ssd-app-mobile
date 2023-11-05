@@ -63,7 +63,7 @@ export type Officer = {
 
 export type PostProps = {
     title: string;
-    link: string;
+    link?: string;
     body: string;
     image: ImageSourcePropType;
 }

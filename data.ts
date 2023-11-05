@@ -13,8 +13,8 @@ export const officers: Officer[] = [
     },
     {
         name: 'Stephen',
-        position: 'stephen',
-        image: require('./assets/images/stephen.jpg')
+        position: 'Treasurer',
+        image: require('./assets/images/stephen-2.jpg')
     },
     {
         name: 'Param Gupta',
@@ -23,7 +23,7 @@ export const officers: Officer[] = [
     },
     {
         name: 'Angel',
-        position: 'Outreach Officer',
+        position: 'angel',
         image: require('./assets/images/angel.png')
     },
     {
@@ -48,9 +48,7 @@ export const events: SSDEvent[] = [
     }
 ];
 
-type NewType = PostProps;
-
-export const posts: NewType[] = [
+export const posts: PostProps[] = [
     {
         title: 'Signin form',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSdmrFDLjn2wM4k77q_56I3aXJ7BqdDL7FArxH1aOAYc6Z8bMQ/viewform?usp=sf_link',
@@ -63,6 +61,12 @@ export const posts: NewType[] = [
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSdftHGhWxedsAQF8iR3ljxkRiqc1vNpkIQOXaeRkA4jL4YDjA/viewform?usp=sf_link',
         body: 'Give feedback on the mobile dev meeting from 11/7 and vote for if you want this next topic!',
         image: require('./assets/images/chuck.png')
+    },
+    {
+        
+        title: 'SSD is now a Better Call Saul-themed club',
+        body: 'Next meeting we will watch the finale',
+        image: require('./assets/images/announcement.jpg')
     }
 ];
 
